@@ -213,6 +213,7 @@
     <Compile Include="Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/AnchorUIManager.cs" />
     <Compile Include="Assets/ObjectManager.cs" />
     <Compile Include="Assets/GestureDetector.cs" />
+    <Compile Include="Assets/HandMatController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Shaders/XingLightShader.shader" />

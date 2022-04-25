@@ -1,17 +1,19 @@
 ﻿<Properties StartupConfiguration="{A5B1F9DE-A03D-4BE4-835E-69034EDD0568}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ObjectManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TestBall.cs">
     <Files>
-      <File FileName="Assets/GestureDetector.cs" Line="44" Column="44" />
+      <File FileName="Assets/GestureDetector.cs" Line="59" Column="1" />
       <File FileName="Assets/CustomHand.cs" Line="25" Column="6" />
       <File FileName="Assets/Oculus/Avatar/Resources/Materials/AvatarMaterialStateShader.cginc" />
-      <File FileName="Assets/ObjectManager.cs" Line="24" Column="9" />
+      <File FileName="Assets/ObjectManager.cs" Line="58" Column="44" />
+      <File FileName="Assets/HandMatController.cs" Line="23" Column="64" />
+      <File FileName="Assets/TestBall.cs" Line="56" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HandSculpt" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="ObjectManager.cs" selected="True" />
+              <Node name="TestBall.cs" selected="True" />
             </Node>
           </Node>
         </State>

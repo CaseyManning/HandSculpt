@@ -241,12 +241,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1755163590}
+          m_TargetAssemblyTypeName: HandMatController, Assembly-CSharp
+          m_MethodName: OnGrab
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onEnd:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 119215875}
           m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
           m_MethodName: OnGrabStop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1755163590}
+          m_TargetAssemblyTypeName: HandMatController, Assembly-CSharp
+          m_MethodName: OnGrabEnd
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -327,12 +351,36 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1209005905}
+          m_TargetAssemblyTypeName: HandMatController, Assembly-CSharp
+          m_MethodName: OnGrab
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onEnd:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 119215875}
           m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
           m_MethodName: OnGrabStop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1209005905}
+          m_TargetAssemblyTypeName: HandMatController, Assembly-CSharp
+          m_MethodName: OnGrabEnd
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -660,34 +708,10 @@ MonoBehaviour:
       m_Calls: []
   OnMiddlePinch:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 119215875}
-        m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
-        m_MethodName: OnGrab
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1209005897}
-          m_ObjectArgumentAssemblyTypeName: CustomHand, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnMiddlePinchStop:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 119215875}
-        m_TargetAssemblyTypeName: ObjectManager, Assembly-CSharp
-        m_MethodName: OnGrabStop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   left: 1
 --- !u!114 &1209005903 stripped
 MonoBehaviour:
@@ -701,6 +725,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1209005905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209005896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0003d8fbf70204545a1151e730c7ecfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHand: {fileID: 2100000, guid: 70aa6130b4f154defbf079c49d0e9958, type: 2}
+  grabHand: {fileID: 2100000, guid: 2192aa48baa464919888372a650152e1, type: 2}
 --- !u!1 &1546513616 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 126d619cf4daa52469682f85c1378b4a,
@@ -893,7 +931,19 @@ MonoBehaviour:
       m_Calls: []
   OnMiddlePinch:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 337547281}
+        m_TargetAssemblyTypeName: GestureDetector, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMiddlePinchStop:
     m_PersistentCalls:
       m_Calls: []
@@ -910,6 +960,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2609c54f376cffc4da1ab9401cc1a36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1755163590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755163581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0003d8fbf70204545a1151e730c7ecfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseHand: {fileID: 2100000, guid: 70aa6130b4f154defbf079c49d0e9958, type: 2}
+  grabHand: {fileID: 2100000, guid: 2192aa48baa464919888372a650152e1, type: 2}
 --- !u!1 &1964602097 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a,
@@ -970,7 +1034,7 @@ MonoBehaviour:
   colorMapEditorPosterize: 1
   textureOpacity_: 1
   edgeRenderingEnabled_: 0
-  edgeColor_: {r: 0, g: 0, b: 0, a: 1}
+  edgeColor_: {r: 1, g: 1, b: 1, a: 1}
   colorMapType: 0
 --- !u!1001 &2078271546
 PrefabInstance:

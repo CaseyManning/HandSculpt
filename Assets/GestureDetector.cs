@@ -13,17 +13,29 @@ public struct Gesture
     public UnityEvent onEnd;
 }
 
+//[System.Serializable]
+//public struct GHand
+//{
+//    public OVRSkeleton skeleton;
+//    public  List<OVRBone> fingerBones;
+//
+//    public Gesture prevGesture;
+//}
+
 public class GestureDetector : MonoBehaviour
 {
 
-    public OVRSkeleton skeleton;
     public List<Gesture> gestures;
 
     public float threshold = 0.07f;
 
+    public OVRSkeleton skeleton;
     private List<OVRBone> fingerBones;
 
     Gesture prevGesture;
+
+    //public GHand left;
+    //public GHand right;
 
 
     // Start is called before the first frame update
@@ -31,6 +43,17 @@ public class GestureDetector : MonoBehaviour
     {
         fingerBones = new List<OVRBone>(skeleton.Bones);
         prevGesture = new Gesture();
+
+        if(skeleton.gameObject.GetComponent<CustomHand>().left)
+        {
+            for(int i = 0; i <gestures.Count; i++)
+            {
+                for(int j = 0; j < gestures[i].fingerData.Count; j++)
+                {
+                    gestures[i].fingerData[j] *= -1;
+                }
+            }
+        }
     }
 
     // Update is called once per frame
@@ -44,7 +67,7 @@ public class GestureDetector : MonoBehaviour
             prevGesture = currentGesture;
             currentGesture.onRecognized.Invoke();
             print("New Gesture Found");
-        } else
+        } else if(!hasRecognized)
         {
             if (prevGesture.onEnd != null)
             {

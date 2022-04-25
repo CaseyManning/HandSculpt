@@ -24,18 +24,35 @@ public class ObjectManager : MonoBehaviour
         
     }
 
+    public static Vector3 getCenter(CustomHand hand)
+    {
+        if (hand.left)
+        {
+            return hand.transform.position + 0.1f * hand.transform.right;
+        }
+        else
+        {
+            return hand.transform.position - 0.1f * hand.transform.right;
+        }
+    }
+
     public void OnGrab(CustomHand hand)
     {
         print("GRABBING");
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Object");
 
         GameObject selected = null;
+        float nearestDist = Mathf.Infinity;
+
+        Vector3 handCenter = getCenter(hand);
 
         foreach(GameObject g in objs)
         {
-            if(Vector3.Distance(g.transform.position, hand.transform.position) < grabRange)
+            float dist = Vector3.Distance(g.transform.position, handCenter);
+            if (dist < grabRange && dist < nearestDist)
             {
                 selected = g;
+                nearestDist = dist;
             }
         }
         if(selected == null)

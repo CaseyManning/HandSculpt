@@ -23,7 +23,8 @@ public class TestBall : MonoBehaviour
     {
         if (following != null)
         {
-            transform.position = following.transform.position + offset;
+            //transform.position = following.transform.position + offset;
+            transform.position = following.transform.TransformPoint(offset);
             transform.rotation = following.transform.rotation;
         }
 
@@ -53,7 +54,8 @@ public class TestBall : MonoBehaviour
         
         if (following == null)
         {
-            offset = transform.position - hand.transform.position;
+            offset = hand.transform.InverseTransformPoint(transform.position);
+            //offset = transform.position - hand.transform.position;
         }
         following = hand.transform;
     }

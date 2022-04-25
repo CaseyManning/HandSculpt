@@ -19,6 +19,8 @@ public class CustomHand : MonoBehaviour
 
     bool wasMiddlePinching = false;
 
+    GameObject selectedObject;
+
     private void Awake()
     {
         hand = GetComponent<OVRHand>();
