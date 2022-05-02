@@ -17,6 +17,15 @@ public class ObjectManager : MonoBehaviour
 
     public GameObject objMenu;
 
+    public Material fadedOut;
+
+    public enum Mode
+    {
+        Main, Edit
+    }
+
+    static Mode mode = Mode.Main;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,49 +43,88 @@ public class ObjectManager : MonoBehaviour
 
     public static void OnGrab(CustomHand hand)
     {
-        print("GRABBING WITH HAND. LEFT: " + hand.left);
+        if (mode == Mode.Main)
+        {
 
-        if (hand.selected == null)
-        { 
-            GameObject newObj = Instantiate(instance.obj);
-            if (hand.left)
+            OnPokeStop(hand);
+            print("GRABBING WITH HAND. LEFT: " + hand.left);
+
+            if (hand.selected == null)
             {
-                newObj.transform.position = hand.transform.position + 0.2f * hand.transform.right;
+                GameObject newObj = Instantiate(instance.obj);
+                if (hand.left)
+                {
+                    newObj.transform.position = hand.transform.position + 0.2f * hand.transform.right;
+                }
+                else
+                {
+                    newObj.transform.position = hand.transform.position - 0.2f * hand.transform.right;
+                }
+                hand.selected = newObj;
             }
-            else
-            {
-                newObj.transform.position = hand.transform.position - 0.2f * hand.transform.right;
-            }
-            hand.selected = newObj;
+
+            hand.selected.GetComponent<ObjectScript>().setFollow(hand);
         }
-
-        hand.selected.GetComponent<ObjectScript>().setFollow(hand);
     }
 
     public static void OnGrabStop(CustomHand hand)
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Object");
-
-        foreach (GameObject g in objs)
+        if (mode == Mode.Main)
         {
-            g.GetComponent<ObjectScript>().stopFollow();
+            hand.selected.GetComponent<ObjectScript>().stopFollow();
         }
     }
 
     public static void OnPoke(CustomHand hand)
     {
-        print("POKE START");
-        if (hand.currentMenu == null)
+        if (mode == Mode.Main)
         {
-            GameObject menu = Instantiate(instance.objMenu);
-            menu.GetComponent<MenuScript>().obj = hand.selected;
-            hand.currentMenu = menu;
+            if (hand.currentMenu == null)
+            {
+                GameObject menu = Instantiate(instance.objMenu);
+                menu.GetComponent<MenuScript>().obj = hand.selected;
+                hand.currentMenu = menu;
+            }
         }
     }
     public static void OnPokeStop(CustomHand hand)
     {
-        print("POKE END");
-        Destroy(hand.currentMenu);
-        hand.currentMenu = null;
+        if (mode == Mode.Main)
+        {
+            instance.StartCoroutine(instance.waitForMenuDestroy(hand));
+            //if (hand.currentMenu != null)
+            //{
+            //    Destroy(hand.currentMenu);
+            //    hand.currentMenu = null;
+            //}
+        }
+    }
+
+    IEnumerator waitForMenuDestroy(CustomHand hand)
+    {
+        while(hand.currentMenu != null)
+        {
+            if(Vector3.Distance(hand.getCenter(), hand.currentMenu.transform.position) > CustomHand.grabRange)
+            {
+                Destroy(hand.currentMenu);
+                hand.currentMenu = null;
+                break;
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    public static void EnterEditMode(GameObject toEdit)
+    {
+        mode = Mode.Edit;
+        SculptManager.editing = toEdit;
+
+        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Object"))
+        {
+            if (g != toEdit)
+            {
+                g.GetComponent<MeshRenderer>().material = instance.fadedOut;
+            }
+        }
     }
 }

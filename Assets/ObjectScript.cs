@@ -15,17 +15,10 @@ public class ObjectScript : MonoBehaviour
 
     public GameObject objectMenu;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (following != null)
         {
-            //transform.position = following.transform.position + offset;
             transform.position = following.transform.TransformPoint(offset);
             transform.rotation = following.transform.rotation;
         }
@@ -57,7 +50,6 @@ public class ObjectScript : MonoBehaviour
         if (following != hand)
         {
             offset = hand.transform.InverseTransformPoint(transform.position);
-            //offset = transform.position - hand.transform.position;
         }
         following = hand.transform;
     }

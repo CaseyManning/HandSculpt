@@ -50,7 +50,6 @@ public class GestureDetector : MonoBehaviour
 
     GHand[] hands;
 
-    // Start is called before the first frame update
     void Start()
     {
         left.fingerBones = new List<OVRBone>(left.skeleton.Bones);
@@ -89,7 +88,6 @@ public class GestureDetector : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         for(int i = 0; i < hands.Length; i++) {
