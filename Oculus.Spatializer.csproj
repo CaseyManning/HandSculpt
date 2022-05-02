@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{16693288-0769-7EF1-4F9B-86418B58308A}</ProjectGuid>
+    <ProjectGuid>{C95BCFD9-175F-3EDC-7EA0-A81C51440B5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Oculus.Spatializer</AssemblyName>

@@ -19,11 +19,47 @@ public class CustomHand : MonoBehaviour
 
     bool wasMiddlePinching = false;
 
-    GameObject selectedObject;
+    public GameObject selected;
+
+    public static float grabRange = 0.3f;
+
+    LineRenderer line;
 
     private void Awake()
     {
         hand = GetComponent<OVRHand>();
+        line = GetComponent<LineRenderer>();
+        line.startWidth = 0.01f;
+        line.endWidth = 0.01f;
+    }
+
+    public Vector3 getCenter()
+    {
+        if (left)
+        {
+            return transform.position + 0.1f * transform.right;
+        }
+        else
+        {
+            return transform.position - 0.1f * transform.right;
+        }
+    }
+
+    GameObject nearestObj()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Object");
+        GameObject nearest = null;
+        float nearestDist = 9999;
+        foreach(GameObject g in objs)
+        {
+            float dist = Vector3.Distance(g.transform.position, getCenter());
+            if (dist < nearestDist && dist < grabRange)
+            {
+                nearest = g;
+                nearestDist = dist;
+            }
+        }
+        return nearest;
     }
 
     private void Update()
@@ -33,25 +69,40 @@ public class CustomHand : MonoBehaviour
             return;
         }
 
-        if(hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
+
+        selected = nearestObj();
+        if (selected != null)
+        {
+            line.enabled = true;
+            line.SetPosition(0, getCenter());
+            line.SetPosition(1, selected.transform.position);
+
+        } else
+        {
+            line.enabled = false;
+        }
+        detectPinches();
+    }
+
+    void detectPinches()
+    {
+        if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
         {
             OnIndexPinch.Invoke(this);
 
-            if(left)
-            {
+            if (left) {
                 leftPinching = true;
-            } else
-            {
+            }
+            else {
                 rightPinching = true;
             }
-        } else
+        }
+        else
         {
-            if (left)
-            {
+            if (left) {
                 leftPinching = false;
             }
-            else
-            {
+            else {
                 rightPinching = false;
             }
         }
@@ -63,7 +114,8 @@ public class CustomHand : MonoBehaviour
                 OnMiddlePinch.Invoke(this);
                 wasMiddlePinching = true;
             }
-        } else
+        }
+        else
         {
             if (wasMiddlePinching)
             {
@@ -71,7 +123,6 @@ public class CustomHand : MonoBehaviour
                 OnMiddlePinchStop.Invoke(this);
             }
         }
-        
     }
 
     [Serializable]

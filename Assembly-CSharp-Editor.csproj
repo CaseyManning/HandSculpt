@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0CB4245F-9D00-9625-FDC0-85F90BBAC637}</ProjectGuid>
+    <ProjectGuid>{AC394A9D-FD90-9732-1E81-2216D28A0DA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -1060,63 +1060,63 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{B1E38960-36E0-1172-DD51-D9AAA6086C67}</Project>
+      <Project>{896EB83C-341C-1FB3-39C7-30D5EB97838B}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Samples.csproj">
-      <Project>{8EC85187-02AF-DF19-845E-093DABD1A84A}</Project>
+      <Project>{5D583A5B-0048-8422-53AF-E6A30F4631B8}</Project>
       <Name>Oculus.Interaction.Samples</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Editor.csproj">
-      <Project>{DCB75324-FB08-128F-02D6-BDB01D99E186}</Project>
+      <Project>{4F289DF5-0108-7745-2F0D-C667478546DA}</Project>
       <Name>Oculus.VR.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.csproj">
-      <Project>{14981FF8-97C6-1342-B1F0-0F8825032245}</Project>
+      <Project>{0ECD3D4C-CC2E-0A54-8ADF-A8D5E3384D15}</Project>
       <Name>Oculus.Platform</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.Editor.csproj">
-      <Project>{26D4D1E5-9A05-34E2-9266-2B137ED34331}</Project>
+      <Project>{875FAA6C-963A-C4E0-8512-1302367BC589}</Project>
       <Name>Oculus.Interaction.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.csproj">
-      <Project>{4C09EF65-39B2-757E-DE26-6032997D154D}</Project>
+      <Project>{44D88F4D-BA57-85CD-4C9A-1591741A35B1}</Project>
       <Name>Oculus.AudioManager</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.Scripts.Editor.csproj">
-      <Project>{5B65FE60-938D-0A30-A18E-BFF6054469A0}</Project>
+      <Project>{D5E97E37-E562-E6C3-3774-F19042B88F5E}</Project>
       <Name>Oculus.VR.Scripts.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.csproj">
-      <Project>{CC6D184C-7988-8597-F9EE-FB63737288BB}</Project>
+      <Project>{28FAFF85-D5D7-29C8-FB68-DC1D6EF30EAC}</Project>
       <Name>Oculus.Interaction</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
-      <Project>{F4C10A20-C246-B907-5C39-9A393DFA7FD0}</Project>
+      <Project>{B9F36DBD-9E98-61AC-DC8E-0B7AD43C6DC9}</Project>
       <Name>Oculus.Platform.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.csproj">
-      <Project>{16693288-0769-7EF1-4F9B-86418B58308A}</Project>
+      <Project>{C95BCFD9-175F-3EDC-7EA0-A81C51440B5B}</Project>
       <Name>Oculus.Spatializer</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Utils.Editor.csproj">
-      <Project>{9AAEBA64-6B21-A908-46D5-B97939B82313}</Project>
+      <Project>{25DE5357-09D7-2ACD-B33F-2898538AFE1C}</Project>
       <Name>Oculus.AudioManager.Utils.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Interaction.InterfaceSupport.csproj">
-      <Project>{0480AA01-2CC3-0365-5083-0F590CF48DE4}</Project>
+      <Project>{8F5F5054-0C31-232A-DCA4-FDC79E476F72}</Project>
       <Name>Oculus.Interaction.InterfaceSupport</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.VR.csproj">
-      <Project>{60524A3E-4B6C-D799-3CF7-435A55F4D779}</Project>
+      <Project>{C046FA66-DF77-714B-DCA4-E72A8BCE1A9A}</Project>
       <Name>Oculus.VR</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.AudioManager.Audio.Editor.csproj">
-      <Project>{455752FF-05B7-D424-FD44-27795EACD949}</Project>
+      <Project>{2382DE26-52B5-841F-28CC-3F2FDD00426D}</Project>
       <Name>Oculus.AudioManager.Audio.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Oculus.Spatializer.Editor.csproj">
-      <Project>{E010E3F0-9201-9B64-A6AC-D7D2A5FFDDE7}</Project>
+      <Project>{A9F2A535-6743-4AEA-30EC-A6ED3EA7E906}</Project>
       <Name>Oculus.Spatializer.Editor</Name>
     </ProjectReference>
   </ItemGroup>
