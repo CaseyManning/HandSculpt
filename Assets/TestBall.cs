@@ -52,7 +52,7 @@ public class TestBall : MonoBehaviour
     public void setFollow(CustomHand hand)
     {
         
-        if (following == null)
+        if (following != hand)
         {
             offset = hand.transform.InverseTransformPoint(transform.position);
             //offset = transform.position - hand.transform.position;

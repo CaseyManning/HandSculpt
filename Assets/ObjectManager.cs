@@ -6,16 +6,23 @@ public class ObjectManager : MonoBehaviour
 {
     public GameObject obj;
 
-    float grabRange = 0.3f;
+    static ObjectManager instance;
+
+    static float grabRange = 0.3f;
 
     public static GameObject leftHand;
     public static GameObject rightHand;
 
+    public GameObject lHand;
+    public GameObject rHand;
+
     // Start is called before the first frame update
     void Start()
     {
-        leftHand = GameObject.FindGameObjectWithTag("LeftHand");
-        rightHand = GameObject.FindGameObjectWithTag("RightHand");
+        leftHand = lHand;
+        rightHand = rHand;
+
+        instance = this;
     }
 
     // Update is called once per frame
@@ -34,11 +41,13 @@ public class ObjectManager : MonoBehaviour
         {
             return hand.transform.position - 0.1f * hand.transform.right;
         }
-    }
+    } 
 
-    public void OnGrab(CustomHand hand)
+    public static void OnGrab(CustomHand hand)
     {
-        print("GRABBING");
+        print("---");
+        print(hand);
+        print("GRABBING WITH HAND. LEFT: " + hand.left);
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Object");
 
         GameObject selected = null;
@@ -57,7 +66,7 @@ public class ObjectManager : MonoBehaviour
         }
         if(selected == null)
         {
-            GameObject newObj = Instantiate(obj);
+            GameObject newObj = Instantiate(instance.obj);
             if (hand.left)
             {
                 newObj.transform.position = hand.transform.position + 0.2f * hand.transform.right;
@@ -72,7 +81,7 @@ public class ObjectManager : MonoBehaviour
         selected.GetComponent<TestBall>().setFollow(hand);
     }
 
-    public void OnGrabStop()
+    public static void OnGrabStop(CustomHand hand)
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Object");
 

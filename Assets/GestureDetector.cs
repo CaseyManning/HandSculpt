@@ -3,24 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+[System.Serializable]
+public class HandGesture : UnityEvent<CustomHand> { };
+
+public static class StructExts
+{
+    public static T Clone<T>(this T val) where T : struct => val;
+}
+
 [System.Serializable]
 public struct Gesture
 {
     public string name;
     public List<Vector3> fingerData;
 
-    public UnityEvent onRecognized;
-    public UnityEvent onEnd;
+    public HandGesture onRecognized;
+    public HandGesture onEnd;
+
 }
 
-//[System.Serializable]
-//public struct GHand
-//{
-//    public OVRSkeleton skeleton;
-//    public  List<OVRBone> fingerBones;
-//
-//    public Gesture prevGesture;
-//}
+[System.Serializable]
+public struct GHand
+{
+    public OVRSkeleton skeleton;
+    public  List<OVRBone> fingerBones;
+
+    public Gesture prevGesture;
+
+    public List<Gesture> gestures;
+
+    public CustomHand customHand;
+
+
+}
 
 public class GestureDetector : MonoBehaviour
 {
@@ -29,85 +45,101 @@ public class GestureDetector : MonoBehaviour
 
     public float threshold = 0.07f;
 
-    public OVRSkeleton skeleton;
-    private List<OVRBone> fingerBones;
+    public GHand left;
+    public GHand right;
 
-    Gesture prevGesture;
-
-    //public GHand left;
-    //public GHand right;
-
+    GHand[] hands;
 
     // Start is called before the first frame update
     void Start()
     {
-        fingerBones = new List<OVRBone>(skeleton.Bones);
-        prevGesture = new Gesture();
+        left.fingerBones = new List<OVRBone>(left.skeleton.Bones);
+        left.prevGesture = new Gesture();
 
-        if(skeleton.gameObject.GetComponent<CustomHand>().left)
+        right.fingerBones = new List<OVRBone>(right.skeleton.Bones);
+        right.prevGesture = new Gesture();
+
+        gestures[0].onRecognized.AddListener(ObjectManager.OnGrab);
+        gestures[0].onEnd.AddListener(ObjectManager.OnGrabStop);
+
+        right.gestures = new List<Gesture>();
+        foreach(Gesture g in gestures)
         {
-            for(int i = 0; i <gestures.Count; i++)
+            Gesture n = g.Clone();
+            n.fingerData = new List<Vector3>(g.fingerData);
+            right.gestures.Add(n);
+
+        }
+
+        for(int i = 0; i <gestures.Count; i++)
+        {
+            
+            for(int j = 0; j < gestures[i].fingerData.Count; j++)
             {
-                for(int j = 0; j < gestures[i].fingerData.Count; j++)
-                {
-                    gestures[i].fingerData[j] *= -1;
-                }
+                gestures[i].fingerData[j] *= -1;
             }
         }
+        left.gestures = new List<Gesture>(gestures.ToArray());
+
+
+        hands = new GHand[] { left, right };
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Gesture currentGesture = Recognize();
-        bool hasRecognized = !currentGesture.Equals(new Gesture());
-        if(hasRecognized && !currentGesture.Equals(prevGesture))
-        {
-            prevGesture = currentGesture;
-            currentGesture.onRecognized.Invoke();
-            print("New Gesture Found");
-        } else if(!hasRecognized)
-        {
-            if (prevGesture.onEnd != null)
+        for(int i = 0; i < hands.Length; i++) {
+            Gesture currentGesture = Recognize(i);
+            bool hasRecognized = !currentGesture.Equals(new Gesture());
+            if (hasRecognized && !currentGesture.Equals(hands[i].prevGesture))
             {
-                prevGesture.onEnd.Invoke();
+                hands[i].prevGesture = currentGesture;
+                currentGesture.onRecognized.Invoke(hands[i].customHand);
+                print("New Gesture Found");
             }
-        }
-        if(!hasRecognized)
-        {
-            prevGesture = new Gesture();
+            else if (!hasRecognized)
+            {
+                if (hands[i].prevGesture.onEnd != null)
+                {
+                    hands[i].prevGesture.onEnd.Invoke(hands[i].customHand);
+                }
+            }
+            if (!hasRecognized)
+            {
+                hands[i].prevGesture = new Gesture();
+            }
         }
     }
 
     public void Save()
     {
-        Gesture g = new Gesture();
-        g.name = "New Gesture";
-        List<Vector3> data = new List<Vector3>();
-        print("—————————————");
-        foreach(var bone in fingerBones)
-        {
-            data.Add(skeleton.transform.InverseTransformPoint(bone.Transform.position));
-            print(skeleton.transform.InverseTransformPoint(bone.Transform.position));
-        }
-        g.fingerData = data;
-        print("—————————————");
-        gestures.Add(g);
+        //Gesture g = new Gesture();
+        //g.name = "New Gesture";
+        //List<Vector3> data = new List<Vector3>();
+        //print("—————————————");
+        //foreach(var bone in right.fingerBones)
+        //{
+        //    data.Add(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
+        //    print(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
+        //}
+        //g.fingerData = data;
+        //print("—————————————");
+        //gestures.Add(g);
     }
 
-    Gesture Recognize()
+    Gesture Recognize(int hand)
     {
         Gesture current = new Gesture();
         float currentMin = Mathf.Infinity;
 
-        foreach(var gesture in gestures)
+        foreach(var gesture in hands[hand].gestures)
         {
             float sumDist = 0;
             bool isDiscarded = false;
-            for(int i = 0; i < fingerBones.Count; i++)
+            for(int i = 0; i < hands[hand].fingerBones.Count; i++)
             {
-                Vector3 currentData = skeleton.transform.InverseTransformPoint(fingerBones[i].Transform.position);
+                Vector3 currentData = hands[hand].skeleton.transform.InverseTransformPoint(hands[hand].fingerBones[i].Transform.position);
                 float distance = Vector3.Distance(currentData, gesture.fingerData[i]);
                 if(distance > threshold)
                 {

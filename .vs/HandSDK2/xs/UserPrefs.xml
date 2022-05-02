@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{B1E38960-36E0-1172-DD51-D9AAA6086C67}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TestBall.cs">
+    <Files>
+      <File FileName="Assets/GestureDetector.cs" Line="106" Column="74" />
+      <File FileName="Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/Tools/FingerTipPokeTool.cs" Line="96" Column="16" />
+      <File FileName="Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/HandsManager.cs" Line="29" Column="9" />
+      <File FileName="Assets/ObjectManager.cs" Line="43" Column="41" />
+      <File FileName="Assets/TestBall.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HandSDK2" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Oculus" expanded="True">
+                <Node name="Interaction" expanded="True">
+                  <Node name="Runtime" expanded="True">
+                    <Node name="Scripts" expanded="True">
+                      <Node name="Attributes" expanded="True" />
+                      <Node name="Collisions" expanded="True" />
+                      <Node name="Extensions" expanded="True" />
+                      <Node name="Grab" expanded="True" />
+                      <Node name="HandPosing" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+                <Node name="SampleFramework" expanded="True">
+                  <Node name="Core" expanded="True">
+                    <Node name="HandsInteraction" expanded="True">
+                      <Node name="Scripts" expanded="True">
+                        <Node name="Tools" expanded="True" />
+                      </Node>
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="TestBall.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="94ebb2d7-0736-4f21-a127-dea110825fe8" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

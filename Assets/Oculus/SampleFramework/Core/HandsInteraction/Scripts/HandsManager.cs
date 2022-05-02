@@ -25,8 +25,8 @@ namespace OculusSampleFramework
 		[SerializeField] GameObject _rightHand = null;
 
 		public HandsVisualMode VisualMode = HandsVisualMode.Mesh;
-		private OVRHand[] _hand = new OVRHand[(int)OVRHand.Hand.HandRight + 1];
-		private OVRSkeleton[] _handSkeleton = new OVRSkeleton[(int)OVRHand.Hand.HandRight + 1];
+		public OVRHand[] _hand = new OVRHand[(int)OVRHand.Hand.HandRight + 1];
+		public OVRSkeleton[] _handSkeleton = new OVRSkeleton[(int)OVRHand.Hand.HandRight + 1];
 		private OVRSkeletonRenderer[] _handSkeletonRenderer = new OVRSkeletonRenderer[(int)OVRHand.Hand.HandRight + 1];
 		private OVRMesh[] _handMesh = new OVRMesh[(int)OVRHand.Hand.HandRight + 1];
 		private OVRMeshRenderer[] _handMeshRenderer = new OVRMeshRenderer[(int)OVRHand.Hand.HandRight + 1];
