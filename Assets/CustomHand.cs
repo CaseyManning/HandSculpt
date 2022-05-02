@@ -21,6 +21,8 @@ public class CustomHand : MonoBehaviour
 
     public GameObject selected;
 
+    public GameObject currentMenu;
+
     public static float grabRange = 0.3f;
 
     LineRenderer line;

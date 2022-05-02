@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestBall : MonoBehaviour
+public class ObjectScript : MonoBehaviour
 {
     Transform following = null;
 
@@ -12,6 +12,8 @@ public class TestBall : MonoBehaviour
     float startScale;
     float startDist;
     bool isScaling = false;
+
+    public GameObject objectMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -63,5 +65,14 @@ public class TestBall : MonoBehaviour
     public void stopFollow()
     {
         following = null;
+    }
+
+    public void showMenu()
+    {
+
+    }
+    public void hideMenu()
+    {
+
     }
 }

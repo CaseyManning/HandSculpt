@@ -1,17 +1,18 @@
 ﻿<Properties StartupConfiguration="{896EB83C-341C-1FB3-39C7-30D5EB97838B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TestBall.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MenuScript.cs">
     <Files>
       <File FileName="Assets/CustomHand.cs" Line="78" Column="41" />
-      <File FileName="Assets/ObjectManager.cs" Line="35" Column="1" />
-      <File FileName="Assets/GestureDetector.cs" Line="21" Column="20" />
-      <File FileName="Assets/TestBall.cs" Line="1" Column="1" />
+      <File FileName="Assets/ObjectManager.cs" Line="72" Column="52" />
+      <File FileName="Assets/GestureDetector.cs" Line="66" Column="59" />
+      <File FileName="Assets/TestBall.cs" Line="16" Column="34" />
+      <File FileName="Assets/MenuScript.cs" Line="7" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HandSculptV2" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="TestBall.cs" selected="True" />
+              <Node name="MenuScript.cs" selected="True" />
             </Node>
           </Node>
         </State>

@@ -62,6 +62,9 @@ public class GestureDetector : MonoBehaviour
         gestures[0].onRecognized.AddListener(ObjectManager.OnGrab);
         gestures[0].onEnd.AddListener(ObjectManager.OnGrabStop);
 
+        gestures[1].onRecognized.AddListener(ObjectManager.OnPoke);
+        gestures[1].onEnd.AddListener(ObjectManager.OnPokeStop);
+
         right.gestures = new List<Gesture>();
         foreach(Gesture g in gestures)
         {
@@ -96,7 +99,7 @@ public class GestureDetector : MonoBehaviour
             {
                 hands[i].prevGesture = currentGesture;
                 currentGesture.onRecognized.Invoke(hands[i].customHand);
-                print("New Gesture Found");
+                print("New Gesture Found: " + currentGesture.name);
             }
             else if (!hasRecognized)
             {
@@ -114,18 +117,18 @@ public class GestureDetector : MonoBehaviour
 
     public void Save()
     {
-        //Gesture g = new Gesture();
-        //g.name = "New Gesture";
-        //List<Vector3> data = new List<Vector3>();
-        //print("—————————————");
-        //foreach(var bone in right.fingerBones)
-        //{
-        //    data.Add(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
-        //    print(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
-        //}
-        //g.fingerData = data;
-        //print("—————————————");
-        //gestures.Add(g);
+        Gesture g = new Gesture();
+        g.name = "New Gesture";
+        List<Vector3> data = new List<Vector3>();
+        print("—————————————");
+        foreach(var bone in right.fingerBones)
+        {
+            data.Add(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
+            print(right.skeleton.transform.InverseTransformPoint(bone.Transform.position));
+        }
+        g.fingerData = data;
+        print("—————————————");
+        gestures.Add(g);
     }
 
     Gesture Recognize(int hand)

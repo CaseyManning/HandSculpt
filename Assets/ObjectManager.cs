@@ -15,6 +15,8 @@ public class ObjectManager : MonoBehaviour
     public GameObject lHand;
     public GameObject rHand;
 
+    public GameObject objMenu;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,15 +29,15 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public static void OnGrab(CustomHand hand)
     {
         print("GRABBING WITH HAND. LEFT: " + hand.left);
 
-        if(hand.selected == null)
-        {
+        if (hand.selected == null)
+        { 
             GameObject newObj = Instantiate(instance.obj);
             if (hand.left)
             {
@@ -48,7 +50,7 @@ public class ObjectManager : MonoBehaviour
             hand.selected = newObj;
         }
 
-        hand.selected.GetComponent<TestBall>().setFollow(hand);
+        hand.selected.GetComponent<ObjectScript>().setFollow(hand);
     }
 
     public static void OnGrabStop(CustomHand hand)
@@ -57,7 +59,24 @@ public class ObjectManager : MonoBehaviour
 
         foreach (GameObject g in objs)
         {
-            g.GetComponent<TestBall>().stopFollow();
+            g.GetComponent<ObjectScript>().stopFollow();
         }
+    }
+
+    public static void OnPoke(CustomHand hand)
+    {
+        print("POKE START");
+        if (hand.currentMenu == null)
+        {
+            GameObject menu = Instantiate(instance.objMenu);
+            menu.GetComponent<MenuScript>().obj = hand.selected;
+            hand.currentMenu = menu;
+        }
+    }
+    public static void OnPokeStop(CustomHand hand)
+    {
+        print("POKE END");
+        Destroy(hand.currentMenu);
+        hand.currentMenu = null;
     }
 }

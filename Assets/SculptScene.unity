@@ -383,11 +383,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &735388339 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78906942dba6db24ca155679a45f60ef, type: 3}
-  m_PrefabInstance: {fileID: 1528405354}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &763525829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,6 +744,7 @@ MonoBehaviour:
   obj: {fileID: 9071514537864233405, guid: a613769ac52644221b0c91ac66761dff, type: 3}
   lHand: {fileID: 2169537293406418449}
   rHand: {fileID: 2621174870395331497}
+  objMenu: {fileID: 2956604756026971513, guid: f03403bc04ee84c68b0274fe14e265db, type: 3}
 --- !u!4 &1072965311
 Transform:
   m_ObjectHideFlags: 0
@@ -964,6 +960,266 @@ PrefabInstance:
       propertyPath: right.customHand
       value: 
       objectReference: {fileID: 2734225619678485220}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].name
+      value: Poke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[2].x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[2].y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[2].z
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[3].x
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[3].y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[3].z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[4].x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[4].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[4].z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[5].x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[5].y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[5].z
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[6].x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[6].y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[6].z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[7].x
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[7].y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[7].z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[8].x
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[8].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[8].z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[9].x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[10].x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[10].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[11].x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[11].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[12].x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[12].y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[12].z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[13].x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[13].y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[13].z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[14].x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[14].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[14].z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[15].x
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[15].y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[15].z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[16].x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[16].y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[16].z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[17].x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[17].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[17].z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[18].x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[18].y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[18].z
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[19].x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[19].y
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[19].z
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[20].x
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[20].y
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[20].z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[21].x
+      value: -0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[21].y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[21].z
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[22].x
+      value: -0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[22].y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[22].z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[23].x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[23].y
+      value: -0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7863063752932095245, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
+      propertyPath: gestures.Array.data[1].fingerData.Array.data[23].z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7863063752932095247, guid: f24018ed2689a4eeba1ccfbed04209d6, type: 3}
       propertyPath: m_Name
       value: GestureDetection
@@ -1777,6 +2033,11 @@ Transform:
   m_Father: {fileID: 1154756507603345044}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &543450652205185665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 78906942dba6db24ca155679a45f60ef, type: 3}
+  m_PrefabInstance: {fileID: 1528405354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &901188587061587150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1876,7 +2137,7 @@ Transform:
   - {fileID: 72732271}
   - {fileID: 520430405819584984}
   - {fileID: 337344374}
-  - {fileID: 735388339}
+  - {fileID: 543450652205185665}
   - {fileID: 794199728}
   - {fileID: 227206512}
   m_Father: {fileID: 0}
@@ -1969,6 +2230,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   left: 1
+  selected: {fileID: 0}
+  currentMenu: {fileID: 0}
 --- !u!120 &2273072349630838149
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2155,6 +2418,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   left: 0
+  selected: {fileID: 0}
+  currentMenu: {fileID: 0}
 --- !u!120 &2734225619678485221
 LineRenderer:
   m_ObjectHideFlags: 0
