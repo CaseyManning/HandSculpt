@@ -82,6 +82,7 @@
     <Compile Include="Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportInputHandlerHMD.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportInputHandler.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Core/DistanceGrab/Scripts/GrabManager.cs" />
+    <Compile Include="Assets/Sculptable.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/AnchorSession.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/CharacterCameraConstraint.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/SpatialAnchorSession.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTransition.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Scripts/SelectionCylinder.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Scripts/PanelHMDFollower.cs" />
+    <Compile Include="Assets/MenuScript.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/AppDeeplink/AppDeeplinkUI.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/DebugUI/DebugUISample.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/Passthrough/Scripts/BrushController.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTransitionInstant.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/Anchor.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/Tools/InteractableToolView.cs" />
+    <Compile Include="Assets/SculptManager.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Core/HandsInteraction/Scripts/InteractableToolsInputRouter.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/Passthrough/Scripts/ObjectManipulator.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/Passthrough/Scripts/OverlayPassthrough.cs" />
@@ -172,9 +175,6 @@
     <Compile Include="Assets/Oculus/SampleFramework/Usage/SpatialAnchor/Scripts/AnchorUIManager.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/Passthrough/Scripts/SelectivePassthroughExperience.cs" />
     <Compile Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Scripts/TrackSegment.cs" />
-    <Compile Include="Assets/MenuScript.cs" />
-    <Compile Include="Assets/SculptManager.cs" />
-    <Compile Include="Assets/Sculptable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Shaders/XingLightShader.shader" />

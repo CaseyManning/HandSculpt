@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4674099118863713383}
   - component: {fileID: 4851416094819448285}
   - component: {fileID: 1981666131031460670}
+  - component: {fileID: 5774354870294019460}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Object
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 9071514537864233405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.014, y: 0.869, z: 0.461}
-  m_LocalScale: {x: 0.19567, y: 0.19567, z: 0.19567}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9071514537864233405}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: ffd862664a7be4e138c2980e4ed99270, type: 2}
 --- !u!23 &6276206877305570046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 26f7c273c41254fadb9c0f50a8397377, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,3 +153,15 @@ MonoBehaviour:
   _movementProvider: {fileID: 0}
   _handAligment: 0
   _handGrabPoints: []
+--- !u!114 &5774354870294019460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071514537864233405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26c21ff6312d432cb150e6de644b5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

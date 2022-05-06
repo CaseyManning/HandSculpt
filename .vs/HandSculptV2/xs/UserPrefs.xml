@@ -1,19 +1,25 @@
 ﻿<Properties StartupConfiguration="{896EB83C-341C-1FB3-39C7-30D5EB97838B}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sculptable.cs">
     <Files>
-      <File FileName="Assets/CustomHand.cs" Line="24" Column="35" />
-      <File FileName="Assets/ObjectManager.cs" Line="109" Column="43" />
-      <File FileName="Assets/GestureDetector.cs" Line="102" Column="66" />
-      <File FileName="Assets/TestBall.cs" Line="54" Column="17" />
-      <File FileName="Assets/MenuScript.cs" Line="43" Column="44" />
-      <File FileName="Assets/SculptManager.cs" Line="24" Column="1" />
-      <File FileName="Assets/Sculptable.cs" Line="13" Column="5" />
+      <File FileName="Assets/CustomHand.cs" Line="96" Column="1" />
+      <File FileName="Assets/ObjectManager.cs" Line="79" Column="13" />
+      <File FileName="Assets/GestureDetector.cs" Line="51" Column="12" />
+      <File FileName="Assets/TestBall.cs" Line="16" Column="34" />
+      <File FileName="Assets/MenuScript.cs" Line="10" Column="1" />
+      <File FileName="Assets/SculptManager.cs" Line="15" Column="6" />
+      <File FileName="Assets/Sculptable.cs" Line="89" Column="24" />
+      <File FileName="Assets/Oculus/VR/Scripts/OVRPlugin.cs" Line="1089" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HandSculptV2" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Oculus" expanded="True">
+                <Node name="VR" expanded="True">
+                  <Node name="Scripts" expanded="True" />
+                </Node>
+              </Node>
               <Node name="Sculptable.cs" selected="True" />
             </Node>
           </Node>

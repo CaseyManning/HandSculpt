@@ -18,13 +18,16 @@ public class ObjectManager : MonoBehaviour
     public GameObject objMenu;
 
     public Material fadedOut;
+    public Material objMat;
+
+    static float lastGrab;
 
     public enum Mode
     {
         Main, Edit
     }
 
-    static Mode mode = Mode.Main;
+    public static Mode mode = Mode.Main;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +41,10 @@ public class ObjectManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (GestureDetector.instance.left.prevGesture.name == "Fist" && GestureDetector.instance.right.prevGesture.name == "Fist")
+        {
+            EndEditMode();
+        }
     }
 
     public static void OnGrab(CustomHand hand)
@@ -64,6 +70,13 @@ public class ObjectManager : MonoBehaviour
             }
 
             hand.selected.GetComponent<ObjectScript>().setFollow(hand);
+        } else
+        {
+            if (Time.time - lastGrab < 0.2f)
+            {
+                EndEditMode();
+            }
+            lastGrab = Time.time;
         }
     }
 
@@ -126,5 +139,20 @@ public class ObjectManager : MonoBehaviour
                 g.GetComponent<MeshRenderer>().material = instance.fadedOut;
             }
         }
+    }
+
+    public static void EndEditMode()
+    {
+        print("ENDING EDIT MODE");
+        mode = Mode.Main;
+        SculptManager.editing = null;
+
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Object"))
+        {
+            
+            g.GetComponent<MeshRenderer>().material = instance.objMat;
+        }
+
+        SculptManager.deactivateVisual();
     }
 }

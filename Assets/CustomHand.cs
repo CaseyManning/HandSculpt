@@ -70,20 +70,54 @@ public class CustomHand : MonoBehaviour
         {
             return;
         }
+        
+        detectPinches();
 
-
-        selected = nearestObj();
-        if (selected != null)
+        if(ObjectManager.mode == ObjectManager.Mode.Main)
         {
-            line.enabled = true;
-            line.SetPosition(0, getCenter());
-            line.SetPosition(1, selected.transform.position);
+            selected = nearestObj();
+            if (selected != null)
+            {
+                line.enabled = true;
+                line.SetPosition(0, getCenter());
+                line.SetPosition(1, selected.transform.position);
 
-        } else
+            }
+            else
+            {
+                line.enabled = false;
+            }
+        } else if (ObjectManager.mode == ObjectManager.Mode.Edit)
         {
             line.enabled = false;
+            handleSculptInput();
         }
-        detectPinches();
+    }
+
+    Vector3 lastPos = Vector3.zero;
+
+    void handleSculptInput()
+    {
+        SculptManager.editing.GetComponent<Sculptable>().sculpt(GetComponent<OVRSkeleton>());
+
+        if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
+        {
+            Vector3 indexPos = GetComponent<OVRSkeleton>().Bones[(int)OVRPlugin.BoneId.Hand_IndexTip].Transform.position;
+            if(lastPos == Vector3.zero)
+            {
+                lastPos = indexPos;
+            }
+            
+            SculptManager.editing.GetComponent<Sculptable>().pinch(indexPos, indexPos - lastPos);
+            lastPos = indexPos;
+        } else
+        {
+            if(lastPos != Vector3.zero)
+            {
+                SculptManager.editing.GetComponent<Sculptable>().pinchEnd();
+            }
+            lastPos = Vector3.zero;
+        }
     }
 
     void detectPinches()

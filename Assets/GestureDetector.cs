@@ -48,10 +48,14 @@ public class GestureDetector : MonoBehaviour
     public GHand left;
     public GHand right;
 
-    GHand[] hands;
+    public GHand[] hands;
+
+    public static GestureDetector instance;
 
     void Start()
     {
+        instance = this;
+
         left.fingerBones = new List<OVRBone>(left.skeleton.Bones);
         left.prevGesture = new Gesture();
 

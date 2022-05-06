@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/SculptScene.unity
+    path: Assets/Scenes/DinnerTheater.unity
+    guid: 8194320f6e42e4fd29b84f789c9b0839
+  - enabled: 1
+    path: Assets/Scenes/SculptScene.unity
     guid: 93a06e6842b8b49329b94c02e93a368d
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1709ce95a8d5e45eeb2cbe7e85207947, type: 2}
