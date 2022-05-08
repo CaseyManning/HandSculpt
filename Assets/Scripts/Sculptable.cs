@@ -108,8 +108,6 @@ public class Sculptable : MonoBehaviour
         //deformingMesh.vertices = displacedVertices;
         //deformingMesh.RecalculateNormals();
         //
-        //GetComponent<MeshCollider>().sharedMesh = null; //TODO: switch to box collider with bounds
-        //GetComponent<MeshCollider>().sharedMesh = deformingMesh;
 
         Vector3 point = current;
         Vector3 delta = current - last;
@@ -126,11 +124,13 @@ public class Sculptable : MonoBehaviour
         Vector3 n = Vector3.one;// deformingMesh.normals[vi];
 
         SculptManager.SetPointerVisual(transform.localToWorldMatrix * current, Quaternion.LookRotation(n, Vector3.one), 1f);
+
     }
 
     public void pinchEnd()
     {
-        
+        GetComponent<MeshCollider>().sharedMesh = null; //TODO: switch to box collider with bounds
+        GetComponent<MeshCollider>().sharedMesh = deformingMesh;
     }
 
     public void sculpt(OVRSkeleton hand)

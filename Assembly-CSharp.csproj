@@ -178,6 +178,7 @@
     <Compile Include="Assets/Scripts/Ketchup.cs" />
     <Compile Include="Assets/Scripts/KSculptable.cs" />
     <Compile Include="Assets/KetchupBall.cs" />
+    <Compile Include="Assets/HeatGun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Oculus/SampleFramework/Usage/HandsTrainExample/Shaders/XingLightShader.shader" />
