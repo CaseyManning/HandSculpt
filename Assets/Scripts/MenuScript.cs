@@ -6,11 +6,23 @@ public class MenuScript : MonoBehaviour
 {
     public GameObject obj;
 
-    Vector3 offset = new Vector3(0, 0.2f, 0.05f);
+    Vector3 offset = new Vector3(0, 0.2f, 0);
+
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {
+        if(obj == null)
+        {
+            Destroy(gameObject);
+        }
         transform.position = obj.transform.position + offset;
+
+        transform.LookAt(transform.position - (Camera.main.transform.position - transform.position), transform.up);
+        transform.rotation = Quaternion.Euler(new Vector3(15, transform.rotation.eulerAngles.y, 0));
     }
 
     public void delete()

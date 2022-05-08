@@ -108,7 +108,7 @@ public class CustomHand : MonoBehaviour
                 lastPos = indexPos;
             }
             
-            SculptManager.editing.GetComponent<Sculptable>().pinch(indexPos, indexPos - lastPos);
+            SculptManager.editing.GetComponent<Sculptable>().pinch(indexPos, lastPos);
             lastPos = indexPos;
         } else
         {

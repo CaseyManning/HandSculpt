@@ -22,6 +22,8 @@ public class ObjectManager : MonoBehaviour
 
     static float lastGrab;
 
+    public bool createNew = false;
+
     public enum Mode
     {
         Main, Edit
@@ -57,6 +59,10 @@ public class ObjectManager : MonoBehaviour
 
             if (hand.selected == null)
             {
+                if(instance.createNew == false )
+                {
+                    return;
+                }
                 GameObject newObj = Instantiate(instance.obj);
                 if (hand.left)
                 {
@@ -82,7 +88,7 @@ public class ObjectManager : MonoBehaviour
 
     public static void OnGrabStop(CustomHand hand)
     {
-        if (mode == Mode.Main)
+        if (mode == Mode.Main && hand.selected != null)
         {
             hand.selected.GetComponent<ObjectScript>().stopFollow();
         }

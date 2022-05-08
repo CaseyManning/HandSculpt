@@ -1,14 +1,17 @@
 ﻿<Properties StartupConfiguration="{896EB83C-341C-1FB3-39C7-30D5EB97838B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Sculptable.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/KetchupBall.cs">
     <Files>
-      <File FileName="Assets/CustomHand.cs" Line="96" Column="1" />
-      <File FileName="Assets/ObjectManager.cs" Line="79" Column="13" />
+      <File FileName="Assets/CustomHand.cs" Line="112" Column="23" />
+      <File FileName="Assets/ObjectManager.cs" Line="64" Column="28" />
       <File FileName="Assets/GestureDetector.cs" Line="51" Column="12" />
       <File FileName="Assets/TestBall.cs" Line="16" Column="34" />
-      <File FileName="Assets/MenuScript.cs" Line="10" Column="1" />
-      <File FileName="Assets/SculptManager.cs" Line="15" Column="6" />
-      <File FileName="Assets/Sculptable.cs" Line="89" Column="24" />
+      <File FileName="Assets/MenuScript.cs" Line="9" Column="44" />
+      <File FileName="Assets/SculptManager.cs" Line="28" Column="56" />
+      <File FileName="Assets/Sculptable.cs" Line="115" Column="40" />
       <File FileName="Assets/Oculus/VR/Scripts/OVRPlugin.cs" Line="1089" Column="3" />
+      <File FileName="Assets/Ketchup.cs" Line="31" Column="54" />
+      <File FileName="Assets/KSculptable.cs" Line="27" Column="46" />
+      <File FileName="Assets/KetchupBall.cs" Line="16" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,7 +23,8 @@
                   <Node name="Scripts" expanded="True" />
                 </Node>
               </Node>
-              <Node name="Sculptable.cs" selected="True" />
+              <Node name="Scripts" expanded="True" />
+              <Node name="KetchupBall.cs" selected="True" />
             </Node>
           </Node>
         </State>
