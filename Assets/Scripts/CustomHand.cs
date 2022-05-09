@@ -98,7 +98,7 @@ public class CustomHand : MonoBehaviour
 
     void handleSculptInput()
     {
-        SculptManager.editing.GetComponent<Sculptable>().sculpt(GetComponent<OVRSkeleton>());
+        //SculptManager.editing.GetComponent<Sculptable>().sculpt(GetComponent<OVRSkeleton>());
 
         if (hand.GetFingerIsPinching(OVRHand.HandFinger.Index))
         {

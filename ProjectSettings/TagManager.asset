@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - bottle
+  - ball
   layers:
   - Default
   - TransparentFX

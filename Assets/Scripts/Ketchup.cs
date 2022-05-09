@@ -40,12 +40,15 @@ public class Ketchup : MonoBehaviour
 
         if (Physics.Raycast(transform.position, -transform.up,  out hit, 100, layerMask))
         {
-            print("instantiating");
-            GameObject ball = Instantiate(ketchupball);
+            if (hit.transform.gameObject.tag != "ball")
+            {
+                print("instantiating");
+                GameObject ball = Instantiate(ketchupball);
 
-            ball.transform.position = hit.point;
-            ball.transform.parent = hit.transform;
-            //ball.transform.rotation = transform.rotation;
+                ball.transform.position = hit.point;
+                ball.transform.parent = hit.transform;
+                //ball.transform.rotation = transform.rotation;
+            }
         }
     }
 

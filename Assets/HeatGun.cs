@@ -6,7 +6,7 @@ public class HeatGun : MonoBehaviour
 {
     LineRenderer lr;
 
-    float darkenRange = 0.05f;
+    float darkenRange = 0.03f;
 
     // Start is called before the first frame update
     void Start()
@@ -32,24 +32,39 @@ public class HeatGun : MonoBehaviour
                 Mesh m = ball.GetComponent<MeshFilter>().mesh;
                 Vector3[] vertices = m.vertices;
 
+                if (m.colors.Length < vertices.Length)
+                {
+                    Color[] ncolors = new Color[vertices.Length];
+                    for (int i = 0; i < vertices.Length; i++) {
+                        ncolors[i] = Color.white; new Color(240/255, 218/255, 182/255);
+                    }
+                    m.colors = ncolors;
+                }
+                
+
                 Color[] colors = new Color[vertices.Length];
+
+                Vector3[] newVerts = new Vector3[vertices.Length];
+
                 for (int i = 0; i < vertices.Length; i++)
                 {
+                    newVerts[i] = m.vertices[i];
+                    colors[i] = m.colors[i];
                     if(Vector3.Distance(hit.point, ball.transform.TransformPoint(vertices[i])) < darkenRange)
                     {
-                        colors[i] = Color.red;
+                        colors[i] = m.colors[i] * 0.87f;
+                        newVerts[i] += m.normals[i] * Time.deltaTime * 0.08f;
+
                     } else
                     {
-                        if (m.colors.Length > i)
-                        {
-                            colors[i] = m.colors[i];
-                        } else
-                        {
-                            colors[i] = new Color(255, 250, 250);
-                        }
+                        colors[i] = m.colors[i];
+                        
                     }
+
+                     
                 }
                 m.colors = colors;
+                m.vertices = newVerts;
             }
 
         } else

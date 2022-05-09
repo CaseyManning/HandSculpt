@@ -138,13 +138,13 @@ public class ObjectManager : MonoBehaviour
         mode = Mode.Edit;
         SculptManager.editing = toEdit;
 
-        foreach(GameObject g in GameObject.FindGameObjectsWithTag("Object"))
-        {
-            if (g != toEdit)
-            {
-                g.GetComponent<MeshRenderer>().material = instance.fadedOut;
-            }
-        }
+        //foreach(GameObject g in GameObject.FindGameObjectsWithTag("Object"))
+        //{
+        //    if (g != toEdit)
+        //    {
+        //        g.GetComponent<MeshRenderer>().material = instance.fadedOut;
+        //    }
+        //}
     }
 
     public static void EndEditMode()
@@ -153,11 +153,11 @@ public class ObjectManager : MonoBehaviour
         mode = Mode.Main;
         SculptManager.editing = null;
 
-        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Object"))
-        {
+        //foreach (GameObject g in GameObject.FindGameObjectsWithTag("Object"))
+        //{
             
-            g.GetComponent<MeshRenderer>().material = instance.objMat;
-        }
+        //    g.GetComponent<MeshRenderer>().material = instance.objMat;
+        //}
 
         SculptManager.deactivateVisual();
     }

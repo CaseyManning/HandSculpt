@@ -44,8 +44,8 @@ public class Sculptable : MonoBehaviour
 
     void Update()
     {
-        deformingMesh.vertices = displacedVertices;
-        deformingMesh.RecalculateNormals();
+        //deformingMesh.vertices = displacedVertices;
+        //deformingMesh.RecalculateNormals();
     }
 
     void UpdateVertex(int i)
